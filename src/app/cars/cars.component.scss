@@ -13,9 +13,23 @@
         .addBtn{
             width: 60px;
             height: 30px;
+           
         }
     }
-    
+    .my-cars-list{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        justify-content: center;
+        padding: 5px;
+        margin: 0;
+        font-size: 30px;
+        font-family: sans-serif;
+        &:hover{
+            background-color: rgb(133, 133, 133);
+        }
+        cursor: pointer;
+    }
 
 
     .allCarsTitle{

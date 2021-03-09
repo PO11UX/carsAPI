@@ -1,5 +1,4 @@
 export class cars{
-    id: string;
     name: string;
     desc:string;
     img:string;
@@ -14,8 +13,7 @@ export class cars{
     mult:boolean;
    
 
-    constructor(id,name,desc,img,ABS,elG,look,bluetooth,alarm,park,gps,comp,mult){
-        this.id=id;
+    constructor(name,desc,img,ABS,elG,look,bluetooth,alarm,park,gps,comp,mult){
         this.name=name;
         this.desc=desc;
         this.img=img;

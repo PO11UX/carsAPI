@@ -1,21 +1,27 @@
 <div class="all">
     <div class="myCars">MY CARS
-        <div class="allCar" >
+        <!-- <div class="allCar" >
             {{myCars | json}}
-        </div>
+        </div> -->
         <button class="addBtn" (click)="addCar($event)">ADD</button>
     </div>
+    <ul class='my-cars-list' *ngFor='let car of myCars;let i = index;'>
+        <li >{{car.name}}
+            <button  (click)="delete($event)" [id]='i' >delete</button>
+        </li>
+    </ul>
     <div class="allCarsTitle">ALL CARS</div>
     <!-- <div class="allCar"*ngFor="let col of columns">
         {{col}}</div> -->
         <div class="allCar" *ngFor="let cars of cars">
-            <div *ngFor="let col of index">
-              {{cars[col]}}</div>
+            
+              {{cars.name}}
+            
         </div>
 </div>
 <div id="modal" class="modal hideModal">
     <div class="modal-content">
-        <form #userForm="ngForm">
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
            {{userForm.value | json}}
            <hr>
            {{userModel | json}}
@@ -69,7 +75,7 @@
                 <label>მულტი საჭე</label>
             </div>
         </div>
-          <button class="see" (click)="see($event)">&times;</button>
+          <button class="see">&times;</button>
         </form>
         <button class="close" (click)="close($event)">&times;</button>
       </div>

@@ -34,21 +34,3 @@ export class AppComponent implements OnInit{
 
 
 
-
-
-// fetch('https://jsonplaceholder.typicode.com/todos')
-//   .then(response => response.json())
-//   .then(json => console.log(json))
-// fetch("https://car-stockpile.p.rapidapi.com/base-trim?make=Audi&model=RS4%20Avant&year=2019", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "d77b8d894bmsh2a658fadb47598cp198f94jsn561cc8644d20",
-// 		"x-rapidapi-host": "car-stockpile.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
