@@ -278,5 +278,34 @@
           "comp": true,
           "mult": false
       }
+      ,
+      {
+          "name": "Toyuta",
+          "desc": "lfjsfalksdjaslkd",
+          "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-toyota-prius-mmp-1-1591721588.jpg",
+          "ABS": true,
+          "elG": true,
+          "look": false,
+          "Bluetooth": true,
+          "Alarm": true,
+          "park": true,
+          "GPS": true,
+          "comp": true,
+          "mult": false
+      },
+      {
+          "name": "Mitsubishi",
+          "desc": "lfjsfalksdjaslkd",
+          "img": "https://lh3.googleusercontent.com/proxy/lrDAEIOpC1kETwYF0siyYEsLy7NiQNAclgopKvLBoqdvNIm3lgMqGKg12Anx9_0-LpdKu9c__oNFlBKHgFafpiHjGPvfXKGDinl_DWwONmB4H8W3em04",
+          "ABS": true,
+          "elG": true,
+          "look": false,
+          "Bluetooth": true,
+          "Alarm": true,
+          "park": true,
+          "GPS": true,
+          "comp": true,
+          "mult": false
+      }
   ]
 }

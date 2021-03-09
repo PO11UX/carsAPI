@@ -1,19 +1,30 @@
+$Comic:"Comic Sans MS", cursive, sans-serif;
 .all{
-    background-color: aqua;
+    background-color: rgb(255, 248, 183);
     height: 100%;
     width: 30%;
     padding: 20px;
     .myCars{
         
-        font-size: 35px;
-        margin:10px 30px;
-        font-family: sans-serif;
+        font-size: 30px;
+        margin:10px 20px;
+        font-family: $Comic;
         display: flex;
         justify-content: space-between;
         .addBtn{
+            outline: none;
+            font-family: $Comic;
             width: 60px;
             height: 30px;
+            box-shadow: 0 9px #999;
+            background-color: #ffee00;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px #999;
            
+        }
+        .addBtn:hover{
+            background-color: #dbcd00;
         }
     }
     .my-cars-list{
@@ -23,27 +34,46 @@
         justify-content: center;
         padding: 5px;
         margin: 0;
-        font-size: 30px;
-        font-family: sans-serif;
+        font-size: 25px;
+        font-family: $Comic;
         &:hover{
-            background-color: rgb(133, 133, 133);
+            background-color: rgb(179, 179, 179);
         }
-        cursor: pointer;
+       
+        .newCars{
+            display: flex;
+            justify-content: space-between;
+        }
+        .deleteBtn{
+            outline: none;
+            cursor: pointer;
+            font-family: $Comic;
+            width: 60px;
+            height: 30px;
+            box-shadow: 0 9px #999;
+            background-color: #ff592f;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px #999;
+        }
+        .deleteBtn:hover{
+            background-color: #bd2a05;
+        }
     }
 
 
     .allCarsTitle{
-        font-size: 35px;
-        font-family: sans-serif;
-        margin:10px 30px;
+        font-size: 30px;
+        font-family: $Comic;
+        margin:10px 20px;
     }
     .allCar{
         padding: 5px;
         display: flex;
-        font-size: 30px;
-        font-family: sans-serif;
+        font-size: 25px;
+        font-family: $Comic;
         &:hover{
-            background-color: rgb(133, 133, 133);
+            background-color: rgb(179, 179, 179);
         }
     }
 }
@@ -74,18 +104,72 @@
   
   /* The Close Button */
   .close {
-    color: #aaaaaa;
-    font-size: 28px;
-    font-weight: bold;
-  }
+    outline: none;
+    cursor: pointer;
+    font-family: $Comic;
+    width: 30px;
+    height: 30px;
+
+    box-shadow: 0 9px #999;
+    background-color: #ff592f;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 3px #999;
+}
   
   .close:hover,
   .close:focus {
-    color: #000;
-    text-decoration: none;
+    background-color: #bd2a05;
     cursor: pointer;
   }
   .chooseCar{
       width: 300px;
-      background-color: rgb(168, 168, 168);
+      height: 35px;
+      background-color: rgb(255, 255, 255);
+      font-family: $Comic;
+      font-size: 20px;
+      border-radius: 15px;
+      outline: none;
   }
+  .description{
+      font-size: 20px;
+      font-family: $Comic;
+      
+  }
+  .descInput{
+    width: 900px;
+    height: 35px;
+    font-size: 17px;
+    font-family: $Comic;
+    border-radius: 10px;
+    border: 1px solid;
+    outline: none;
+  }
+  .checkBox{
+    font-size: 20px;
+    font-family: $Comic;
+}
+.checks{
+    width: 20px;
+    height: 20px;
+}
+.submit{
+    margin-top: 20px;
+    outline: none;
+    font-family: $Comic;
+    width: 100px;
+    height: 40px;
+    box-shadow: 0 9px #999;
+    background-color: #359eff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+    font-size: 20px;
+    
+    
+}
+.submit:hover{
+    background-color: #0057a8;
+}
+
+

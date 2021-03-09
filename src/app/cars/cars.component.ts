@@ -32,7 +32,7 @@ export class CarsComponent implements OnInit {
         console.log('error'+error);
         
       }
-     // this.userModel= JSON.parse(localStorage.getItem('cars'));
+      this.myCars= JSON.parse(localStorage.getItem('cars'));
     }
     
      addCar(event) {
@@ -79,4 +79,5 @@ export class CarsComponent implements OnInit {
       console.log();
 
     }
+   
   }
