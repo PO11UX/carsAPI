@@ -18,9 +18,12 @@ export class CarsComponent implements OnInit {
     constructor(private rs : RestService){}
     //index = ['name'];//,'id','desc','ABS','elG','look','Bluetooth','Alarm','park','GPS','comp','mult'];
     myCars=[];
+    display=[];
     newCar:any;
-    cars:cars[]=[] ;
-    userModel= new cars('','','', false ,false ,false ,false ,false ,false ,false ,false ,false );
+    editing=false;
+    cars:cars[]=[];
+    userModel= new cars('','','', false ,false ,false ,false ,false ,false ,false ,false ,false);
+    editingCar=new cars('','','', false ,false ,false ,false ,false ,false ,false ,false ,false);
     ngOnInit(): void{
       this.rs.getCars().subscribe(
         (response)=>{
@@ -36,16 +39,17 @@ export class CarsComponent implements OnInit {
     }
     
      addCar(event) {
+      console.log(this.modal[0].classList);
       // this.modal.classList.remove('hideModal');
       this.modal[0].classList.remove('hideModal')
-      console.log(this.modal);
+      console.log(this.modal[0].classList);
     }
     close(event){
       this.modal[0].classList.add('hideModal');
     }
     
     
-    onSubmit(){
+    onSubmit(event){
       // this.rs.enrole(this.userModel)
       // .subscribe(
       //   data => console.log('success', data),
@@ -54,10 +58,10 @@ export class CarsComponent implements OnInit {
       //   )
       // this.newCar=this.userModel;
       // this.myCars.push(this.newCar);
-        
+        if(event.target.classList.contains("ng-valid")){
         this.addCars(this.userModel);
         this.modal[0].classList.add('hideModal');
-       
+        }
 
     }
     addCars(car){
@@ -79,5 +83,33 @@ export class CarsComponent implements OnInit {
       console.log();
 
     }
-   
+    edit(event){
+      this.editing=true;
+      this.editingCar=this.myCars[event.target.id];
+      
+      this.modal[0].classList.remove('hideModal')
+      // this.delete(event);
+    }
+    detals(event){
+ 
+     
+      this.display.push(this.myCars[event.target.id]);
+    
+     while(this.display.length>1){
+       this.display.shift();
+       
+      }
+    console.log(this.myCars[event.target.id])
+  //  console.log(this.cars[event.target.id]);
+    }
+    details(event){
+       this.display.push(this.cars[event.target.id]);
+      console.log(this.cars[event.target.id]);
+      while(this.display.length>1){
+        this.display.shift();
+        
+       }
+    }
+    
+
   }

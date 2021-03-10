@@ -1,3 +1,6 @@
+<div class="screen">
+
+
 <div class="all">
     <div class="myCars">MY CARS
         <!-- <div class="allCar" >
@@ -7,31 +10,61 @@
     </div>
     <ul class='my-cars-list'  *ngFor='let car of myCars;let i = index;'>
         <li class="newCars">{{car.name}}
+            <div class="btnS">
+            <button class="deleteBtn" (click)="detals($event)" [id]='i' >detals</button>
+            <button class="deleteBtn" (click)="edit($event)" [id]='i' >edit</button>
             <button class="deleteBtn" (click)="delete($event)" [id]='i' >delete</button>
+        </div>
         </li>
     </ul>
     <div class="allCarsTitle">ALL CARS</div>
     <!-- <div class="allCar"*ngFor="let col of columns">
         {{col}}</div> -->
-        <div class="allCar" *ngFor="let cars of cars">
-            
+        <div class="allCar" *ngFor="let cars of cars;let i = index;">
+    
               {{cars.name}}
-            
+
+             <button class="deleteBtn" (click)="details($event)" [id]='i' >detals</button>
         </div>
-</div>
-<div id="modal" class="modal hideModal">
+    </div>
+    <div class="display" *ngFor="let dis of display">
+        <div class="display-img">
+            <div>car name: {{dis.name}}</div>
+            <img class="carImg" [src]=dis.img alt="">
+        </div>
+        <li class="display-desc">
+            description:
+            {{dis.desc}}
+        </li>
+        <li class="display-more">
+            <ul>
+            <li>ABS:{{dis.ABS}}</li>
+            <li>ელექტრო შუშის ამწევი:{{dis.elG}}</li>
+            <li>ლუქი:{{dis.look}}</li>
+            <li>bluetooth:{{dis.bluetooth}}</li>
+            <li>სიგნალიზაცია:{{dis.alarm}}</li>
+            <li>პარკინგკონტროლი:{{dis.park}}</li>
+            <li>GPS:{{dis.GPS}}</li>
+            <li>ბორტკომპიუტერი:{{dis.comp}}</li>
+            <li>მულტი საჭე:{{dis.mult}}</li>
+        </ul>
+        </li>
+    </div>
+</div>  
+    
+    <div *ngIf="!editing" id="modal"  class="modal hideModal">
     <div class="modal-content">
-        
-        <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-        <select  class="chooseCar" name="name" [(ngModel)]="userModel.name" form="carform">
-            <option *ngFor="let car of Cars">{{car}}</option>
-          </select>
-          <div class="description" >
-              <label >description</label>
-              <input class="descInput" type="text"name="desc" [(ngModel)]="userModel.desc">
+        <form #userForm="ngForm" (ngSubmit)="onSubmit($event)" novalidate>
+            <h1>adding</h1>
+            <select required  class="chooseCar" name="name" [(ngModel)]="userModel.name" form="carform">
+                <option  *ngFor="let car of Cars">{{car}}</option>
+            </select>
+            <div class="description" >
+                <label >description</label>
+                <input  class="descInput is-invalid" type="text"name="desc" [(ngModel)]="userModel.desc">
           </div>
           <div class="description" na>
-            <label >image Link</label>
+              <label >image Link</label>
             <input class="descInput" type="text" name="img" [(ngModel)]='userModel.img'>
         </div>
         <div class="checkBox">
@@ -42,7 +75,68 @@
             </div>
             <div class="checkForm">
                 <input class="checks" type="checkbox" name="elG" [(ngModel)]="userModel.elG">
-                <label>ელექტრო შუქის ამწევი</label>
+                <label>ელექტრო შუშის ამწევი</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="look" [(ngModel)]="userModel.look">
+                <label>ლუქი</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="bluetooth" [(ngModel)]="userModel.bluetooth">
+                <label>Bluetooth</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="alarm" [(ngModel)]="userModel.alarm">
+                <label>სიგნალიზაცია</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="park" [(ngModel)]="userModel.park">
+                <label>პარკინგკონტროლი</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="GPS" [(ngModel)]="userModel.GPS">
+                <label>ნავიგაცია</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="comp" [(ngModel)]="userModel.comp">
+                <label>ბორტკომპიუტერი</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="mult" [(ngModel)]="userModel.mult">
+                <label>მულტი საჭე</label>
+            </div>
+        </div>
+          <button class="submit">submit</button>
+        </form>
+        <button class="close" (click)="close($event)">X</button>
+      </div>
+</div>
+<div  *ngIf="editing" id="modal" class="modal hideModal">
+    <div class="modal-content">
+        
+        <form #userForm="ngForm" (ngSubmit)="onSubmit($event)" novalidate>
+            <h1>editing</h1>
+            <select required  class="chooseCar" name="name" [(ngModel)]="userModel.name" form="carform">
+                <option  *ngFor="let car of Cars">{{car}}</option>
+            </select>
+            <div class="description" >
+                <label [value]="editingCar.description" >description</label>
+              
+                <input  class="descInput is-invalid" type="text"name="desc" [(ngModel)]="userModel.desc">
+          </div>
+          <div class="description" na>
+              <label >image Link</label>
+            <input class="descInput" type="text" name="img" [(ngModel)]='userModel.img'>
+        </div>
+        <div class="checkBox">
+            <label >More</label>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="ABS" [(ngModel)]="userModel.ABS">
+                <label>ABS</label>
+            </div>
+            <div class="checkForm">
+                <input class="checks" type="checkbox" name="elG" [(ngModel)]="userModel.elG">
+                <label>ელექტრო შუშის ამწევი</label>
             </div>
             <div class="checkForm">
                 <input class="checks" type="checkbox" name="look" [(ngModel)]="userModel.look">

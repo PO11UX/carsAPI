@@ -13,6 +13,7 @@
       "GPS": true,
       "comp": true,
       "mult": false
+      
     },
     {
         "name": "BMW",
@@ -31,7 +32,7 @@
     {
         "name": "Mercedes",
         "desc": "lfjsfalksdjaslkd",
-        "img": "mercedes-benz.com/en/company/_jcr_content/image/MQ6-12-image-20191023111555/00-mercedes-benz-ag-company-2560x1440.jpeg",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-mercedes-benz-cls-class-1591735006.jpg?crop=0.708xw:0.531xh;0.0737xw,0.353xh&resize=1200:*",
         "ABS": true,
         "elG": true,
         "look": false,
@@ -43,7 +44,7 @@
         "mult": false
     },
     {
-        "name": "Toyuta",
+        "name": "Toyota",
         "desc": "lfjsfalksdjaslkd",
         "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-toyota-prius-mmp-1-1591721588.jpg",
         "ABS": true,
@@ -59,7 +60,7 @@
     {
         "name": "Mitsubishi",
         "desc": "lfjsfalksdjaslkd",
-        "img": "https://lh3.googleusercontent.com/proxy/lrDAEIOpC1kETwYF0siyYEsLy7NiQNAclgopKvLBoqdvNIm3lgMqGKg12Anx9_0-LpdKu9c__oNFlBKHgFafpiHjGPvfXKGDinl_DWwONmB4H8W3em04",
+        "img": "https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Mitsubishi%20Outlanter%20new%203%20web.jpg",
         "ABS": true,
         "elG": true,
         "look": false,
@@ -101,7 +102,7 @@
       {
           "name": "Mercedes",
           "desc": "lfjsfalksdjaslkd",
-          "img": "mercedes-benz.com/en/company/_jcr_content/image/MQ6-12-image-20191023111555/00-mercedes-benz-ag-company-2560x1440.jpeg",
+          "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-mercedes-benz-cls-class-1591735006.jpg?crop=0.708xw:0.531xh;0.0737xw,0.353xh&resize=1200:*",
           "ABS": true,
           "elG": true,
           "look": false,
@@ -113,7 +114,7 @@
           "mult": false
       },
       {
-          "name": "Toyuta",
+          "name": "Toyota",
           "desc": "lfjsfalksdjaslkd",
           "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-toyota-prius-mmp-1-1591721588.jpg",
           "ABS": true,
@@ -129,7 +130,7 @@
       {
           "name": "Mitsubishi",
           "desc": "lfjsfalksdjaslkd",
-          "img": "https://lh3.googleusercontent.com/proxy/lrDAEIOpC1kETwYF0siyYEsLy7NiQNAclgopKvLBoqdvNIm3lgMqGKg12Anx9_0-LpdKu9c__oNFlBKHgFafpiHjGPvfXKGDinl_DWwONmB4H8W3em04",
+          "img": "https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Mitsubishi%20Outlanter%20new%203%20web.jpg",
           "ABS": true,
           "elG": true,
           "look": false,
@@ -170,7 +171,7 @@
       {
           "name": "Mercedes",
           "desc": "lfjsfalksdjaslkd",
-          "img": "mercedes-benz.com/en/company/_jcr_content/image/MQ6-12-image-20191023111555/00-mercedes-benz-ag-company-2560x1440.jpeg",
+          "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-mercedes-benz-cls-class-1591735006.jpg?crop=0.708xw:0.531xh;0.0737xw,0.353xh&resize=1200:*",
           "ABS": true,
           "elG": true,
           "look": false,
@@ -182,7 +183,7 @@
           "mult": false
       },
       {
-          "name": "Toyuta",
+          "name": "Toyota",
           "desc": "lfjsfalksdjaslkd",
           "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-toyota-prius-mmp-1-1591721588.jpg",
           "ABS": true,
@@ -198,7 +199,7 @@
       {
           "name": "Mitsubishi",
           "desc": "lfjsfalksdjaslkd",
-          "img": "https://lh3.googleusercontent.com/proxy/lrDAEIOpC1kETwYF0siyYEsLy7NiQNAclgopKvLBoqdvNIm3lgMqGKg12Anx9_0-LpdKu9c__oNFlBKHgFafpiHjGPvfXKGDinl_DWwONmB4H8W3em04",
+          "img": "https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Mitsubishi%20Outlanter%20new%203%20web.jpg",
           "ABS": true,
           "elG": true,
           "look": false,
@@ -239,7 +240,7 @@
       {
           "name": "Mercedes",
           "desc": "lfjsfalksdjaslkd",
-          "img": "mercedes-benz.com/en/company/_jcr_content/image/MQ6-12-image-20191023111555/00-mercedes-benz-ag-company-2560x1440.jpeg",
+          "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-mercedes-benz-cls-class-1591735006.jpg?crop=0.708xw:0.531xh;0.0737xw,0.353xh&resize=1200:*",
           "ABS": true,
           "elG": true,
           "look": false,
@@ -251,7 +252,7 @@
           "mult": false
       },
       {
-          "name": "Toyuta",
+          "name": "Toyota",
           "desc": "lfjsfalksdjaslkd",
           "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-toyota-prius-mmp-1-1591721588.jpg",
           "ABS": true,
@@ -267,7 +268,7 @@
       {
           "name": "Mitsubishi",
           "desc": "lfjsfalksdjaslkd",
-          "img": "https://lh3.googleusercontent.com/proxy/lrDAEIOpC1kETwYF0siyYEsLy7NiQNAclgopKvLBoqdvNIm3lgMqGKg12Anx9_0-LpdKu9c__oNFlBKHgFafpiHjGPvfXKGDinl_DWwONmB4H8W3em04",
+          "img": "https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Mitsubishi%20Outlanter%20new%203%20web.jpg",
           "ABS": true,
           "elG": true,
           "look": false,
@@ -280,7 +281,7 @@
       }
       ,
       {
-          "name": "Toyuta",
+          "name": "Toyota",
           "desc": "lfjsfalksdjaslkd",
           "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-toyota-prius-mmp-1-1591721588.jpg",
           "ABS": true,
@@ -296,7 +297,7 @@
       {
           "name": "Mitsubishi",
           "desc": "lfjsfalksdjaslkd",
-          "img": "https://lh3.googleusercontent.com/proxy/lrDAEIOpC1kETwYF0siyYEsLy7NiQNAclgopKvLBoqdvNIm3lgMqGKg12Anx9_0-LpdKu9c__oNFlBKHgFafpiHjGPvfXKGDinl_DWwONmB4H8W3em04",
+          "img": "https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Mitsubishi%20Outlanter%20new%203%20web.jpg",
           "ABS": true,
           "elG": true,
           "look": false,

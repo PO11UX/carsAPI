@@ -13,7 +13,7 @@ export class cars{
     mult:boolean;
    
 
-    constructor(name,desc,img,ABS,elG,look,bluetooth,alarm,park,gps,comp,mult){
+    constructor(name,desc,img,ABS,elG,look,bluetooth,alarm,park,gps,comp,mult,){
         this.name=name;
         this.desc=desc;
         this.img=img;
@@ -26,6 +26,6 @@ export class cars{
         this.GPS=gps;
         this.comp=comp;
         this.mult=mult;
-        
+    
     }
 }
