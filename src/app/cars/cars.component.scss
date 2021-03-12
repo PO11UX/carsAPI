@@ -44,21 +44,36 @@ $Comic:"Comic Sans MS", cursive, sans-serif;
             display: flex;
             justify-content: space-between;
         }
-        .deleteBtn{
-            outline: none;
-            cursor: pointer;
-            font-family: $Comic;
-            width: 60px;
-            height: 30px;
-            box-shadow: 0 9px #999;
-            background-color: #ff592f;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 5px #999;
-        }
-        .deleteBtn:hover{
-            background-color: #bd2a05;
-        }
+    }
+    .deleteBtn{
+        outline: none;
+        cursor: pointer;
+        font-family: $Comic;
+        width: 60px;
+        height: 30px;
+        box-shadow: 0 9px #999;
+        background-color: #ff592f;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px #999;
+    }
+    .deleteBtn:hover{
+        background-color: #bd2a05;
+    }
+    .editBtn{
+        @extend .deleteBtn;
+        background-color: #2f89ff;
+        
+    }
+    .editBtn:hover{
+        background-color: #04469c;
+    }
+    .detailsBtn{
+        @extend .deleteBtn;
+        background-color: #fdab2f;
+    }
+    .detailsBtn:hover{
+        background-color: #dd6b00;
     }
 
 
@@ -70,6 +85,7 @@ $Comic:"Comic Sans MS", cursive, sans-serif;
     .allCar{
         padding: 5px;
         display: flex;
+        justify-content: space-between;
         font-size: 25px;
         font-family: $Comic;
         &:hover{
@@ -185,19 +201,53 @@ $Comic:"Comic Sans MS", cursive, sans-serif;
     font-family: $Comic;
     font-size: 35px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    
+  
+    
+}
 
+.display-more{
+   // margin: 10px;
+    padding: 50px 10px; 
+    font-size: 25px;
+    width: 780px;
+    font-family: $Comic;
+
+    li{
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+   img{
+    width: 35px;
+    height: 35px;
+   }
+}
 }
 .display-img{
-    width: 300px;
-    height: 250px;
+    margin-top: 10px;
+    width: 800px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    
    
     .carImg{
         width: 100%;
-        height: 100%;
+       height: 100%;
     }
 }
 
 select.ng-invalid{
     border: 1px solid red;
+}
+.display-main{
+    display: flex;
+    
+    .display-desc{
+        width: 400px;
+      word-wrap: break-word;
+      margin-left: 30px;
+    }
 }

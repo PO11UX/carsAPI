@@ -59,6 +59,7 @@ export class CarsComponent implements OnInit {
         }
       }
       else{
+        if(event.target.classList.contains("ng-valid")){
         this.modal[0].classList.add('hideModal');
         this.editingCar=this.userModel;
         localStorage.setItem('editingCar', JSON.stringify(this.editingCar));
@@ -66,6 +67,7 @@ export class CarsComponent implements OnInit {
         localStorage.setItem('cars', JSON.stringify(this.myCars));
         this.myCars = JSON.parse(localStorage.getItem('cars'));
         this.editing=false;
+        }
       }
     }
 

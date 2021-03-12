@@ -9,9 +9,9 @@
     </div>
     <ul class='my-cars-list'  *ngFor='let car of myCars;let i = index;'>
         <li class="newCars">{{car.name}}
-            <div class="btnS">
-            <button class="deleteBtn" (click)="detals($event)" [id]='i' >detals</button>
-            <button class="deleteBtn" (click)="edit($event)" [id]='i' >edit</button>
+            <div class="btns">
+            <button class="detailsBtn" (click)="detals($event)" [id]='i' >details</button>
+            <button class="editBtn" (click)="edit($event)" [id]='i' >edit</button>
             <button class="deleteBtn" (click)="delete($event)" [id]='i' >delete</button>
         </div>
         </li>
@@ -22,30 +22,42 @@
         <div class="allCar" *ngFor="let cars of cars;let i = index;">
     
               {{cars.name}}
-
-             <button class="deleteBtn" (click)="details($event)" [id]='i' >detals</button>
+            <div class="btns">
+             <button class="detailsBtn" (click)="details($event)" [id]='i' >detals</button>
+            </div>
         </div>
     </div>
     <div class="display" *ngFor="let dis of display">
-        <div class="display-img">
-            <div>car name: {{dis.name}}</div>
+      <div class="display-main">
+        <div class="display-img">car name: {{dis.name}}
             <img class="carImg" [src]=dis.img alt="">
-        </div>
-        <li class="display-desc">
+        </div>    
+        <div  class="display-desc">
             description:
             {{dis.desc}}
-        </li>
-        <li class="display-more">
-            <ul>
-            <li>ABS:{{dis.ABS}}</li>
-            <li>ელექტრო შუშის ამწევი:{{dis.elG}}</li>
-            <li>ლუქი:{{dis.look}}</li>
-            <li>bluetooth:{{dis.bluetooth}}</li>
-            <li>სიგნალიზაცია:{{dis.alarm}}</li>
-            <li>პარკინგკონტროლი:{{dis.park}}</li>
-            <li>GPS:{{dis.GPS}}</li>
-            <li>ბორტკომპიუტერი:{{dis.comp}}</li>
-            <li>მულტი საჭე:{{dis.mult}}</li>
+            
+        </div>
+    </div>
+        <li >
+            <ul class="display-more" >
+            <li>ABS: <img *ngIf="dis.ABS" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.ABS" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>ელექტრო შუშის ამწევი:<img *ngIf="dis.elG" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.elG" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>ლუქი:<img *ngIf="dis.look" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.look" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>bluetooth:<img *ngIf="dis.bluetooth" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.bluetooth" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>სიგნალიზაცია:<img *ngIf="dis.alarm" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.alarm" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>პარკინგკონტროლი:<img *ngIf="dis.park" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.park" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>GPS:<img *ngIf="dis.GPS" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.GPS" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>ბორტკომპიუტერი:<img *ngIf="dis.comp" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.comp" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
+            <li>მულტი საჭე:<img *ngIf="dis.mult" src="/assets/icons8-checked-checkbox-50.png">
+                <img *ngIf="!dis.mult" src="/assets/icons8-indeterminate-checkbox-50.png"></li>
         </ul>
         </li>
     </div>
@@ -116,9 +128,6 @@
         
         <form #userForm="ngForm" (ngSubmit)="onSubmit($event)" novalidate>
             <h1>editing</h1>
-            <hr>
-            {{userModel | json}}
-            <hr>
             <select required  class="chooseCar" name="name" [(ngModel)]="userModel.name" form="carform">
                 <option  *ngFor="let car of Cars">{{car}}</option>
             </select>
