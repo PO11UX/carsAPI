@@ -4,7 +4,6 @@ import { from } from 'rxjs';
 import { cars } from '../cars';
 import { RestService } from '../rest.service';
 
-
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
@@ -21,6 +20,7 @@ export class CarsComponent implements OnInit {
     display=[];
     newCar:any;
     editing=false;
+    id: number;
     cars:cars[]=[];
     userModel= new cars('','','', false ,false ,false ,false ,false ,false ,false ,false ,false);
     editingCar=new cars('','','', false ,false ,false ,false ,false ,false ,false ,false ,false);
@@ -28,12 +28,10 @@ export class CarsComponent implements OnInit {
       this.rs.getCars().subscribe(
         (response)=>{
           this.cars=response;
-         
         }
       ),
       (error)=>{
         console.log('error'+error);
-        
       }
       this.myCars= JSON.parse(localStorage.getItem('cars'));
     }
@@ -48,32 +46,50 @@ export class CarsComponent implements OnInit {
       this.modal[0].classList.add('hideModal');
     }
     
-    
     onSubmit(event){
-      // this.rs.enrole(this.userModel)
-      // .subscribe(
-      //   data => console.log('success', data),
-      //   error => console.error('error',error)
-        
-      //   )
-      // this.newCar=this.userModel;
-      // this.myCars.push(this.newCar);
-        if(event.target.classList.contains("ng-valid")){
-        this.addCars(this.userModel);
-        this.modal[0].classList.add('hideModal');
-        }
 
+      if(!this.editing){
+        if(event.target.classList.contains("ng-valid")){
+          this.modal[0].classList.add('hideModal');
+          this.editingCar=this.userModel;
+          localStorage.setItem('editingCar', JSON.stringify(this.editingCar));
+          this.editingCar = JSON.parse(localStorage.getItem('editingCar'));
+          this.addCars(this.editingCar);
+          
+        }
+      }
+      else{
+        this.modal[0].classList.add('hideModal');
+        this.editingCar=this.userModel;
+        localStorage.setItem('editingCar', JSON.stringify(this.editingCar));
+        this.myCars[this.id] = JSON.parse(localStorage.getItem('editingCar'));;
+        localStorage.setItem('cars', JSON.stringify(this.myCars));
+        this.myCars = JSON.parse(localStorage.getItem('cars'));
+        this.editing=false;
+      }
+    }
+
+    edit(event){
+      this.id = event.target.id;
+      this.editing=true;
+      
+      this.editingCar=this.myCars[this.id];
+      
+      this.modal[0].classList.remove('hideModal')
+    
     }
     addCars(car){
-      
+     
       if(localStorage.getItem("cars")){
         this.myCars = JSON.parse(localStorage.getItem("cars"));
         this.myCars = [car, ...this.myCars]
       }else{
+        
         this.myCars=[car]
       }
       localStorage.setItem("cars", JSON.stringify(this.myCars))
     }
+
     delete(event){
       
       localStorage.removeItem('cars');
@@ -81,18 +97,11 @@ export class CarsComponent implements OnInit {
       console.log(this.myCars);
       localStorage.setItem("cars", JSON.stringify(this.myCars))
       console.log();
+    }
 
-    }
-    edit(event){
-      this.editing=true;
-      this.editingCar=this.myCars[event.target.id];
-      
-      this.modal[0].classList.remove('hideModal')
-      // this.delete(event);
-    }
+
     detals(event){
- 
-     
+
       this.display.push(this.myCars[event.target.id]);
     
      while(this.display.length>1){

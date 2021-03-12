@@ -1,6 +1,5 @@
 <div class="screen">
 
-
 <div class="all">
     <div class="myCars">MY CARS
         <!-- <div class="allCar" >
@@ -63,7 +62,7 @@
                 <label >description</label>
                 <input  class="descInput is-invalid" type="text"name="desc" [(ngModel)]="userModel.desc">
           </div>
-          <div class="description" na>
+          <div class="description">
               <label >image Link</label>
             <input class="descInput" type="text" name="img" [(ngModel)]='userModel.img'>
         </div>
@@ -111,20 +110,23 @@
         <button class="close" (click)="close($event)">X</button>
       </div>
 </div>
+
 <div  *ngIf="editing" id="modal" class="modal hideModal">
     <div class="modal-content">
         
         <form #userForm="ngForm" (ngSubmit)="onSubmit($event)" novalidate>
             <h1>editing</h1>
+            <hr>
+            {{userModel | json}}
+            <hr>
             <select required  class="chooseCar" name="name" [(ngModel)]="userModel.name" form="carform">
                 <option  *ngFor="let car of Cars">{{car}}</option>
             </select>
             <div class="description" >
                 <label [value]="editingCar.description" >description</label>
-              
                 <input  class="descInput is-invalid" type="text"name="desc" [(ngModel)]="userModel.desc">
           </div>
-          <div class="description" na>
+          <div class="description">
               <label >image Link</label>
             <input class="descInput" type="text" name="img" [(ngModel)]='userModel.img'>
         </div>
